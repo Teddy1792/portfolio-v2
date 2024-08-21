@@ -20,7 +20,7 @@ export default function Project() {
               />
             </a>
           </CardItem>
-          <CardItem className="p-4 pt-0 h-36" translateZ={20}>
+          <CardItem className="p-4 pt-0 lg:h-36" translateZ={20}>
             <h1 className="text-3xl lg:text-3xl">Qualification</h1>
             <p>Corporation identification: OpenClassrooms</p>
             <p>Diploma: EQF level 6 - Bachelor&#39;s level</p>

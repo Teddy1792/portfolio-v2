@@ -56,7 +56,7 @@ export default function Home() {
               "Loading..."
             )}
           </CardItem>
-          <CardItem className="p-4 pt-0 h-36" translateZ={20}>
+          <CardItem className="p-4 pt-0 lg:h-36" translateZ={20}>
             <h1 className="text-3xl lg:text-3xl">Location</h1>
             <p>City: Paris</p>
             <p className="whitespace-nowrap">

@@ -5,9 +5,9 @@ export default function Skills() {
   return (
     <section className="lg:w-[300px] min-w-[300px]">
       <CardContainer containerClassName="">
-        <CardBody className="flex flex-row items-center  bg-black shadow-lg">
+        <CardBody className="flex flex-col lg:flex-row items-center  bg-black shadow-lg">
           <CardItem
-            className=" flex justify-center items-center p-8 flex flex-col items-center gap-8"
+            className=" flex justify-center p-8 flex-col items-center gap-8"
             translateZ={50}
           >
             <div className="w-[150px] h-[150px]">

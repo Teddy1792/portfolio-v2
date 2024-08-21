@@ -14,7 +14,7 @@ export default function Profile() {
               height={250}
             />
           </CardItem>
-          <CardItem className="p-4 pt-0 h-36" translateZ={20}>
+          <CardItem className="p-4 pt-0 lg:h-36" translateZ={20}>
             <h1 className="text-3xl lg:text-3xl">Profile</h1>
             <p>Full name: Theodore Abitbol</p>
             <p>Status: employed</p>

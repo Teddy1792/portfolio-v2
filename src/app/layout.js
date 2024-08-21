@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body className={`${vT323.className} md:p-20`}>
         <ThreeBackground />
         <TracingBeam>
-          <div className="flex flex-row mb-20">
+          <div className="flex flex-row justify-center mb-20">
             <NavBar />
           </div>
           {children}

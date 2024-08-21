@@ -17,7 +17,7 @@ export default function Job() {
               />
             </a>
           </CardItem>
-          <CardItem className="p-4 pt-0 h-36" translateZ={20}>
+          <CardItem className="p-4 pt-0 lg:h-36" translateZ={20}>
             <h1 className="text-3xl lg:text-3xl">Employer</h1>
             <p>Corporation identification: hipto</p>
             <p>Location: Paris, France</p>

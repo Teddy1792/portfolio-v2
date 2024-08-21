@@ -17,7 +17,7 @@ export default function Project() {
               />
             </a>
           </CardItem>
-          <CardItem className="p-4 pt-0 h-36" translateZ={20}>
+          <CardItem className="p-4 pt-0 lg:h-36" translateZ={20}>
             <h1 className="text-3xl lg:text-3xl">Freelance client</h1>
             <p>Corporation identification: Les Editions Passe Passe</p>
             <p>Location: Paris, France</p>

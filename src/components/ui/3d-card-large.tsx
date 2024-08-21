@@ -48,7 +48,7 @@ export const CardContainer = ({
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
         className={cn(
-          "flex lg:flex-row items-center justify-center",
+          "flex flex-col lg:flex-row items-center justify-center",
           containerClassName
         )}
         style={{
@@ -85,7 +85,7 @@ export const CardBody = ({
   return (
     <div
       className={cn(
-        "flex flex-col flex lg:flex-row items-center h-100 w-[845px] [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d] rounded border-2 border-custom-text ",
+        "flex flex-col lg:flex-row items-center h-100  w-[320px] lg:w-[845px] [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d] rounded border-2 border-custom-text ",
         className
       )}
     >
