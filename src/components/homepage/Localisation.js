@@ -4,7 +4,6 @@ import fetchWeather from "@/lib/fetchWeather";
 import categorizeWeatherCode from "@/lib/weatherMapping";
 import { useEffect, useState } from "react";
 import ImgFetcher from "@/lib/imgFetcher";
-import { CardContainer, CardBody, CardItem } from "../ui/3d-card";
 import Image from "next/image";
 
 export default function Home() {
@@ -42,36 +41,29 @@ export default function Home() {
 
   return (
     <section className="lg:w-[300px] min-w-[300px]">
-      <CardContainer containerClassName="">
-        <CardBody className="bg-black shadow-lg">
-          <CardItem className="p-4" translateZ={50}>
-            {imgSrc ? (
-              <Image
-                src={imgSrc}
-                alt="weather_image"
-                width={250}
-                height={250}
-              />
-            ) : (
-              "Loading..."
-            )}
-          </CardItem>
-          <CardItem className="p-4 pt-0 lg:h-36" translateZ={20}>
-            <h1 className="text-3xl lg:text-3xl">Location</h1>
-            <p>City: Paris</p>
-            <p className="whitespace-nowrap">
-              Weather status:
-              {isDay === null
-                ? "Loading..."
-                : isDay
-                ? " Day time, "
-                : " Night time, "}
-              {weatherStatus ? weatherStatus : "Loading..."}{" "}
-            </p>
-            <p className="whitespace-nowrap">Temperature status: {temp}°C</p>
-          </CardItem>
-        </CardBody>
-      </CardContainer>
+      <div className="bg-black/50 shadow-lg">
+        <div className="p-4" translateZ={50}>
+          {imgSrc ? (
+            <Image src={imgSrc} alt="weather_image" width={250} height={250} />
+          ) : (
+            "Loading..."
+          )}
+        </div>
+        <div className="p-4 pt-0 lg:h-36" translateZ={20}>
+          <h1 className="text-3xl lg:text-3xl">Location</h1>
+          <p>City: Paris</p>
+          <p className="whitespace-nowrap">
+            Weather status:
+            {isDay === null
+              ? "Loading..."
+              : isDay
+              ? " Day time, "
+              : " Night time, "}
+            {weatherStatus ? weatherStatus : "Loading..."}{" "}
+          </p>
+          <p className="whitespace-nowrap">Temperature status: {temp}°C</p>
+        </div>
+      </div>
     </section>
   );
 }
