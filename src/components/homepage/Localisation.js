@@ -17,20 +17,19 @@ export default function Home() {
       try {
         const data = await fetchWeather();
         const code = data.hourly.weather_code[0];
-        const weatherStatus = categorizeWeatherCode(code);
-        setWeatherStatus(weatherStatus);
+        const status = categorizeWeatherCode(code);
+        setWeatherStatus(status);
 
         const daylight = data.hourly.is_Day[0];
-        const isItDay = daylight === 1 ? true : false;
-        setIsDay(isItDay);
+        setIsDay(daylight === 1);
 
         const temperature = parseFloat(
           data.hourly.temperature_2m[0].toFixed(2)
         );
         setTemp(temperature);
 
-        const imgSrc = await ImgFetcher(weatherStatus, isItDay);
-        setImgSrc(imgSrc);
+        const img = await ImgFetcher(status, daylight === 1);
+        setImgSrc(img);
       } catch (error) {
         console.error("Failed to fetch weather data:", error);
       }
@@ -40,28 +39,38 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="lg:w-[300px] min-w-[300px]">
-      <div className="bg-black/50 shadow-lg">
-        <div className="p-4" translateZ={50}>
+    <section className="lg:w-[350px] min-w-[300px] mb-10">
+      <div className="flex flex-col items-center w-full rounded-2xl border border-white/10 bg-black/50 shadow-lg">
+        {/* Weather illustration */}
+        <div className="p-4 flex items-center justify-center">
           {imgSrc ? (
-            <Image src={imgSrc} alt="weather_image" width={250} height={250} />
+            <Image
+              src={imgSrc}
+              alt="weather_image"
+              width={200}
+              height={200}
+              className="rounded-md"
+            />
           ) : (
-            "Loading..."
+            <p className="text-sm opacity-70">Loading...</p>
           )}
         </div>
-        <div className="p-4 pt-0 lg:h-36" translateZ={20}>
-          <h1 className="text-3xl lg:text-3xl">Location</h1>
-          <p>City: Paris</p>
-          <p className="whitespace-nowrap">
-            Weather status:
+
+        {/* Weather data */}
+        <div className="p-4 text-center space-y-1">
+          <p className="text-lg md:text-xl font-medium">City: Paris</p>
+          <p className="text-lg md:text-xl opacity-90 whitespace-nowrap">
+            Weather status:{" "}
             {isDay === null
               ? "Loading..."
               : isDay
-              ? " Day time, "
-              : " Night time, "}
-            {weatherStatus ? weatherStatus : "Loading..."}{" "}
+              ? "Daytime, "
+              : "Nighttime, "}
+            {weatherStatus || "Loading..."}
           </p>
-          <p className="whitespace-nowrap">Temperature status: {temp}°C</p>
+          <p className="text-lg md:text-xl opacity-90 whitespace-nowrap">
+            Temperature: {temp !== null ? `${temp}°C` : "Loading..."}
+          </p>
         </div>
       </div>
     </section>

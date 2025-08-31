@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useRef } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { GridHelper, Fog } from 'three';
+import { useRef } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { GridHelper, Fog } from "three";
 
 const MovingGrid = () => {
   const gridRef = useRef();
@@ -13,13 +13,16 @@ const MovingGrid = () => {
   });
 
   return (
-    <primitive object={new GridHelper(40, 40, 'green', 'green')} ref={gridRef} />
+    <primitive
+      object={new GridHelper(40, 40, "green", "green")}
+      ref={gridRef}
+    />
   );
 };
 
 const SceneSetup = () => {
   const { scene } = useThree();
-  scene.fog = new Fog('black', 1, 20);
+  scene.fog = new Fog("black", 1, 20);
 
   return null;
 };
@@ -28,14 +31,14 @@ export const ThreeBackground = () => {
   return (
     <Canvas
       style={{
-        position: 'fixed',
+        position: "fixed",
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
+        width: "100%",
+        height: "100%",
         zIndex: -1,
       }}
-      camera={{ position: [0, 5, 10], fov: 75 }}
+      camera={{ position: [0, 5, 5], fov: 75 }}
     >
       <SceneSetup />
       <ambientLight intensity={0.5} />
