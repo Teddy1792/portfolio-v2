@@ -2,23 +2,28 @@ import { ListSection } from "./ItemList";
 
 const engineering = [
   {
-    period: "2022–2024",
-    institution: "OpenClassrooms",
-    degree: "Bachelor’s degree",
-    details: "Front-end development",
-    icon: "/openclassrooms-original.png",
-  },
-  {
     period: "2025–2026",
     institution: "DataScientest",
     degree: "Master’s degree",
     details: "Full-stack development",
     icon: "/datascientest-original.png",
   },
+  {
+    period: "2022–2024",
+    institution: "OpenClassrooms",
+    degree: "Bachelor’s degree",
+    details: "Front-end development",
+    icon: "/openclassrooms-original.png",
+  },
 ];
 
 const humanities = [
-  { period: "2010–2013", institution: "CPGE", degree: null, details: null },
+  {
+    period: "2017–2019",
+    institution: "Sorbonne Nouvelle",
+    degree: "Master's degree",
+    details: "Drones in contemporary fictions",
+  },
   {
     period: "2013–2015",
     institution: "IEP / ENS Lyon",
@@ -26,19 +31,19 @@ const humanities = [
     details: "Lobbying and influence in the automotive industry",
   },
   {
-    period: "2017–2019",
-    institution: "Sorbonne Nouvelle",
-    degree: "Master's degree'",
-    details: "Drones in contemporary fictions",
+    period: "2010–2013",
+    institution: "CPGE - A/L prep school",
+    degree: null,
+    details: null,
   },
 ];
 
 export default function Education() {
   const engItems = engineering.map((it) => ({
     key: `${it.period}-${it.institution}`,
-    title: `${it.institution}${it.degree ? " — " + it.degree : ""}`, // Institution — Degree
-    subtitle: it.period, // Date
-    extra: it.details || null, // Description
+    title: `${it.institution}${it.degree ? " — " + it.degree : ""}`,
+    subtitle: it.period,
+    extra: it.details || null,
     icon: it.icon || null,
   }));
 

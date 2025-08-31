@@ -50,7 +50,7 @@ const toolsExtras = [
   {
     label: "Firebase",
     icon: "/firebase-original.svg",
-    hint: "Auth, real-time (occasional use)",
+    hint: "Auth, real-time",
   },
 ];
 
