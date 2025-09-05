@@ -9,7 +9,7 @@ const MovingGrid = () => {
 
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime();
-    gridRef.current.position.z = time % 10; // Adjust speed as needed
+    gridRef.current.position.z = (time * 0.6) % 10; // Adjust speed as needed
   });
 
   return (

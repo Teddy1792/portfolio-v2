@@ -20,13 +20,20 @@ export default function RootLayout({ children }) {
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
       </Head>
-      <body className="">
+      <body className="antialiased bg-[var(--bg)] text-[var(--text)]">
         <ThreeBackground />
+
+        {/* CRT overlay */}
+        <div
+          aria-hidden
+          className="crt-overlay pointer-events-none fixed inset-0 z-[60]"
+        />
+
         <TracingBeam>
-          <div className="flex flex-row justify-center align-items m-10">
+          <div className="flex flex-row justify-center align-items m-10 crt-content">
             <NavBar />
           </div>
-          {children}
+          <div className="crt-content">{children}</div>
           <Footer />
         </TracingBeam>
       </body>
