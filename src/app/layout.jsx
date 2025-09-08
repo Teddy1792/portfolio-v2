@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Footer from "../components/footer/Footer";
 import ThreeBackground from "../components/threeBackground/ThreeBackground";
 import "./globals.css";
@@ -13,13 +12,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-        />
-      </Head>
       <body className="antialiased bg-[var(--bg)] text-[var(--text)]">
         <ThreeBackground />
 
