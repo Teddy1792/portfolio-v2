@@ -4,14 +4,14 @@ const engineering = [
   {
     period: "2025–2026",
     institution: "DataScientest",
-    degree: "Master’s degree",
+    degree: "Master’s",
     details: "Full-stack development",
     icon: "/datascientest-original.png",
   },
   {
     period: "2022–2024",
     institution: "OpenClassrooms",
-    degree: "Bachelor’s degree",
+    degree: "Bachelor’s",
     details: "Front-end development",
     icon: "/openclassrooms-original.png",
   },
@@ -21,14 +21,14 @@ const humanities = [
   {
     period: "2017–2019",
     institution: "Sorbonne Nouvelle",
-    degree: "Master's degree",
+    degree: "Master's",
     details: "Drones in contemporary fictions",
   },
   {
     period: "2013–2015",
     institution: "IEP / ENS Lyon",
-    degree: "Master’s degree",
-    details: "Lobbying and influence in the automotive industry",
+    degree: "Master’s",
+    details: "Lobbying in the automotive industry",
   },
   {
     period: "2010–2013",
@@ -56,17 +56,17 @@ export default function Education() {
   }));
 
   return (
-    <section className="min-w-[300px] mb-10 mx-4">
-      <div className="flex flex-row bg-black/50 p-6 shadow-lg w-full rounded-2xl border border-white/10 gap-10">
-        <div className="min-w-[350px]">
+    <section className="w-full lg mb-6 mx-auto">
+      <div className="flex flex-col lg:flex-row bg-black/50 p-4 sm:p-6 shadow-lg rounded-2xl border border-white/10 gap-6 lg:gap-10">
+        <div className="w-full lg:w-1/2">
           <ListSection
             heading="Software engineering"
             items={engItems}
-            imgSize={40}
+            imgSize={32}
           />
         </div>
-        <div className="min-w-[400px]">
-          <ListSection heading="Humanities" items={humItems} imgSize={40} />
+        <div className="w-full lg:w-1/2">
+          <ListSection heading="Humanities" items={humItems} imgSize={32} />
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ const sapCore = [
   {
     label: "SAP BTP (admin)",
     icon: "/sap-icon.svg",
-    hint: "Subaccounts, entitlements, destinations, roles",
+    hint: "Administration and development",
   },
   {
     label: "SAP Fiori / UI5",
@@ -22,11 +22,11 @@ const webCore = [
   {
     label: "Next.js",
     icon: "/next_logo.svg",
-    hint: "SSR/ISR, data fetching, performance",
+    hint: "Architecture and design",
   },
   {
     label: "React",
-    icon: "react_logo.svg",
+    icon: "/react_logo.svg",
     hint: "State, effects, accessibility",
   },
   {
@@ -61,14 +61,12 @@ export default function Stack() {
     subtitle: it.hint,
     icon: it.icon || null,
   }));
-
   const sapCoreItems = sapCore.map((it) => ({
     key: it.label,
     title: it.label,
     subtitle: it.hint,
     icon: it.icon || null,
   }));
-
   const toolsItems = toolsExtras.map((it) => ({
     key: it.label,
     title: it.label,
@@ -77,15 +75,11 @@ export default function Stack() {
   }));
 
   return (
-    <section className="min-w-[300px] mb-10 mx-4">
-      <div className="bg-black/50 p-4 shadow-lg w-full rounded-2xl border border-white/10">
-        <div className="flex w-full gap-10">
-          <ListSection
-            heading="Web / Full-stack — Core"
-            items={webCoreItems}
-            gap="gap-6"
-          />
-          <div className="space-y-14">
+    <section className="w-full mb-4 mx-auto">
+      <div className="bg-black/50 p-4 sm:p-6 shadow-lg rounded-2xl border border-white/10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <ListSection heading="Web / Full-stack — Core" items={webCoreItems} />
+          <div className="space-y-10">
             <ListSection heading="SAP & Security — Core" items={sapCoreItems} />
             <ListSection heading="Tools & Extras" items={toolsItems} />
           </div>

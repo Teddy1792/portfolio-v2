@@ -39,27 +39,27 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="lg:w-[350px] min-w-[300px] mb-10">
-      <div className="flex flex-col items-center w-full rounded-2xl border border-white/10 bg-black/50 shadow-lg">
+    <section className="w-full max-w-[300px] mb-4 lg:max-w-none lg:w-[350px]">
+      <div className="flex flex-col lg:w-[350px] items-center w-full rounded-2xl border border-white/10 bg-black/50 shadow-lg">
         {/* Weather illustration */}
         <div className="p-4 flex items-center justify-center">
           {imgSrc ? (
             <Image
               src={imgSrc}
               alt="weather_image"
-              width={200}
-              height={200}
-              className="rounded-md"
+              width={250}
+              height={250}
+              className="w-24 h-24 sm:w-32 sm:h-32 lg:w-64 lg:h-64 object-cover rounded-xl"
             />
           ) : (
-            <p className="text-sm opacity-70">Loading...</p>
+            <p className="text-xs sm:text-sm opacity-70">Loading...</p>
           )}
         </div>
 
         {/* Weather data */}
-        <div className="p-4 text-center space-y-1">
-          <p className="text-lg md:text-xl font-medium">City: Paris</p>
-          <p className="text-lg md:text-xl opacity-90 whitespace-nowrap">
+        <div className="p-3 text-center space-y-1">
+          <p className="text-sm sm:text-base lg:text-2xl">City: Paris</p>
+          <p className="text-sm sm:text-base lg:text-2xl">
             Weather status:{" "}
             {isDay === null
               ? "Loading..."
@@ -68,7 +68,7 @@ export default function Home() {
               : "Nighttime, "}
             {weatherStatus || "Loading..."}
           </p>
-          <p className="text-lg md:text-xl opacity-90 whitespace-nowrap">
+          <p className="text-sm sm:text-base lg:text-2xl">
             Temperature: {temp !== null ? `${temp}°C` : "Loading..."}
           </p>
         </div>
