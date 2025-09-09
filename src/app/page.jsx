@@ -9,7 +9,7 @@ export default function Home() {
     <main className="px-2">
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-4 mx-auto max-w-5xl">
         {/* Top-left */}
-        <div className="flex flex-col gap-2 h-full">
+        <div className="flex flex-col gap-2 h-full items-center">
           <Profile />
           <Job />
         </div>

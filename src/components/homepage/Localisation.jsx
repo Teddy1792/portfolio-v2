@@ -39,7 +39,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="w-full max-w-[300px] mb-4 lg:max-w-none lg:w-[350px]">
+    <section className="w-full mb-4 lg:max-w-none lg:w-[350px]">
       <div className="flex flex-col lg:w-[350px] items-center w-full rounded-2xl border border-white/10 bg-black/50 shadow-lg">
         {/* Weather illustration */}
         <div className="p-4 flex items-center justify-center">
